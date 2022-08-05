@@ -1,0 +1,40 @@
+package com.example.bidirectional_mapping.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+
+@Entity
+@Table(name = "Engineers")
+
+public class Engineers {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int eng_id;
+	@Column
+	private String eng_name;
+
+	@ManyToOne
+	@JoinColumn(name = "Car_Factory_Id")
+    Car_Factory car_Factory;
+
+    @Fetch(value = FetchMode.SUBSELECT)
+
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(
+			name="Factory production"
+			JoinColumn=@JoinColumn(name = "engineers_Id")
+			
+			)
+	private List<Cars> engineers = new ArrayList<>();
+
+
+
+
+}
+

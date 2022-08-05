@@ -1,0 +1,17 @@
+package com.example.bidirectional_mapping.model;
+
+import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Car_Factory")
+public class Car_Factory {
+	@Id
+	private int fact_Id;
+	@Column
+	private String fact_name;
+
+}

@@ -1,0 +1,20 @@
+package com.example.bidirectional_mapping;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.example.bidirectional_mapping.Reposetory.Cart_Repo;
+
+@SpringBootApplication
+public class BidirectionalMappingApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext applicationContext= SpringApplication.run(BidirectionalMappingApplication.class, args);
+		System.out.println("All Done");
+		Cart_Repo cart_Repo = applicationContext.getBean(Cart_Repo.class);
+		Cart cart1 = new Cart("c4");
+		Item milk=  new Item ("milk", cart1);
+	}
+
+}

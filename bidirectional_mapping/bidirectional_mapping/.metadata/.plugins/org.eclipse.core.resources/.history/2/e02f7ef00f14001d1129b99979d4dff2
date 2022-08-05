@@ -1,0 +1,26 @@
+package com.example.bidirectional_mapping;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name = "cart")
+public class cart {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id ;
+	@Column
+	private String name ;
+	private List <Item> items = new ArrayList<>();
+	
+}

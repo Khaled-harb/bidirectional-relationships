@@ -1,0 +1,9 @@
+package com.example.bidirectional_mapping.Reposetory;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.bidirectional_mapping.model.Car_Factory;
+
+public interface Factory_Repository extends CrudRepository<Car_Factory,Integer>{
+
+}

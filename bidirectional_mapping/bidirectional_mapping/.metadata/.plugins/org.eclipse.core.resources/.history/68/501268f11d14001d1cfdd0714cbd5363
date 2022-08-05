@@ -1,0 +1,21 @@
+package com.example.bidirectional_mapping.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+
+@Entity
+@Table(name = "Item_id")
+public class Item_id {
+  
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO)
+	private int serial_id ;
+	@Column(name ="item_id")
+	private int item_id ;
+}

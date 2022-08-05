@@ -1,0 +1,16 @@
+package com.example.bidirectional_mapping.model;
+
+import javax.persistence.*;
+
+
+
+@Entity
+@Table(name = "Item_id")
+public class Item_id {
+  
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO)
+	private int serial_id ;
+	@Column(name ="item_id")
+	private int item_id ;
+}

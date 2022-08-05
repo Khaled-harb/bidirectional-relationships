@@ -1,0 +1,22 @@
+package com.example.bidirectional_mapping.Factory_Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.bidirectional_mapping.Reposetory.Car_Reposetory;
+import com.example.bidirectional_mapping.Reposetory.Engineers_Reposetory;
+import com.example.bidirectional_mapping.Reposetory.Factory_Repository;
+@Service
+
+public interface Factory_Service {
+
+	@Autowired
+	Car_Reposetory car_Reposetory;
+	@Autowired
+	Engineers_Reposetory engineers_Reposetory;
+    @Autowired
+	Factory_Repository factory_Repository;
+    
+
+
+}

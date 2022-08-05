@@ -1,0 +1,24 @@
+package com.example.bidirectional_mapping.Factory_facade;
+
+public class factory_Facade {
+	private final Factory_Service  factory_Service;
+	public void createOrganization(String name) {
+		factory_Service.CreateOrganization(name);
+    }
+
+    public void hiring_engineers(String fact_name, Integer fact_Id) {
+
+    	factory_Service.createTeam(fact_name,fact_Id);
+    }
+    public void createProject(String name, Integer teamId) {
+    	factory_Service.createProject(name,teamId);
+    }
+
+    public void assignProject(Integer projectId, Integer teamId) {
+    	factory_Service.assignProject(projectId,teamId);
+    }
+
+    public void createOrgDetails(String discription, Integer orgId) {
+    	factory_Service.creeateOrgDetails(discription,orgId);
+    }
+}

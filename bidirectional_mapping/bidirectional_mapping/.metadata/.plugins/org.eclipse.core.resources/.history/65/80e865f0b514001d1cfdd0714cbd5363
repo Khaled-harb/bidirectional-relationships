@@ -1,0 +1,57 @@
+package com.example.bidirectional_mapping.Factory_Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.bidirectional_mapping.Reposetory.Car_Reposetory;
+import com.example.bidirectional_mapping.Reposetory.Engineers_Reposetory;
+import com.example.bidirectional_mapping.Reposetory.Factory_Repository;
+import com.example.bidirectional_mapping.model.Car_Factory;
+@Service
+
+public interface Factory_Service {
+
+	@Autowired
+	Car_Reposetory car_Reposetory;
+	@Autowired
+	Engineers_Reposetory engineers_Reposetory;
+    @Autowired
+	Factory_Repository factory_Repository;
+    
+
+    public void factoryIntializing (String fact_naem) {
+    	factory_Repository.save(new Car_Factory(fact_naem));
+
+    }
+
+    public void createTeam(String name, Integer organizationId) {
+
+        Organization org= organiationRepository.findById(organizationId).get();
+        Team team= new Team(name,org);
+        org.addTeam(team);
+        organiationRepository.save(org);
+    }
+
+    public void createProject(String name, Integer teamId) {
+        Team team= teamRepository.findById(teamId).get();
+        Project project = new Project(name);
+        team.assignProject(project);
+        teamRepository.save(team);
+    }
+
+    public void assignProject(Integer projectId, Integer teamId) {
+        Project project= projectRepository.findById(projectId).get();
+        Team team =teamRepository.findById(teamId).get();
+        team.assignProject(project);
+        teamRepository.save(team);
+
+
+    }
+
+    public void creeateOrgDetails(String discription, Integer orgId) {
+        Organization org= organiationRepository.findById(orgId).get();
+        org.setDetails(new OrganizationDetails(discription));
+        organiationRepository.save(org);
+
+    }
+}

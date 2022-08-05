@@ -1,0 +1,11 @@
+package com.example.bidirectional_mapping.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+s
+@RequestMapping(path = "/api/v1/organizations")
+public class FactoryController {
+
+}

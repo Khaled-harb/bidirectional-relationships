@@ -1,0 +1,23 @@
+package com.example.bidirectional_mapping;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.example.bidirectional_mapping.Reposetory.Cart_Repo;
+import com.example.bidirectional_mapping.model.Cart;
+import com.example.bidirectional_mapping.model.Item;
+
+@SpringBootApplication
+public class BidirectionalMappingApplication {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.example.bidirectional_mapping.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cars")
+public class Cars {
+
+}

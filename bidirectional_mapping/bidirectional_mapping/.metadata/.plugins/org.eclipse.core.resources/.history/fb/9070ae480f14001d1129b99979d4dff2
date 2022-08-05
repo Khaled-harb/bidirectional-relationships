@@ -1,0 +1,10 @@
+package com.example.bidirectional_mapping;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cart")
+public class cart {
+
+}

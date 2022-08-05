@@ -1,0 +1,5 @@
+package com.example.bidirectional_mapping.Factory_Service;
+
+public interface Factory_Service {
+
+}

@@ -1,0 +1,47 @@
+package com.example.bidirectional_mapping.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
+
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Car_Factory")
+public class Car_Factory {
+	@Id
+	private int fact_Id;
+	@Column
+	private String fact_name;
+
+	@OneToMany(mappedBy = "car_Factory", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Engineers> engineers = new ArrayList<>();
+
+	@OneToOne( cascade = CascadeType.ALL)
+	 @JoinColumn(name ="fact_id_details",referencedColumnName = "Factory_License_Id")
+	private Factory_License factory_License; 
+	 
+	
+	
+	
+	
+	
+	
+	public void setFactory_License(Factory_License factory_License) {
+		this.factory_License = factory_License;
+	}
+	public Car_Factory (String fact_name) {
+	      this.fact_name =fact_name;
+	   }
+	public Car_Factory (int fact_Id, String fact_name) {
+	      this.fact_name =fact_name;
+	      this.fact_Id=fact_Id;
+	   }
+	 public void hiring_engs(Engineers engs){
+		 engineers.add(engs);
+		 
+		
+	   }
+}

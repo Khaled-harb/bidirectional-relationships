@@ -1,0 +1,22 @@
+package com.example.bidirectional_mapping;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "item")
+
+public class Item {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int item_id;
+	@Column
+	private String item_name;
+	@ManyToOne
+	@JoinColumn(name = "cart_id")
+	private Cart cart;
+
+	public Item(String item_name , Cart cart) {
+
+	}
+}
